@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private UnityEvent<float> _healthChange;
+    public event UnityAction<float> _healthChange;
 
     private float _health = 100;
     private float _maxHealth;
@@ -19,12 +19,12 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _health = Mathf.Clamp(_health -= damage, _minHealth, _maxHealth);
-        _healthChange.Invoke(_health);
+        _healthChange?.Invoke(_health);
     }
 
     public void Heal(float treatment)
     {
         _health = Mathf.Clamp(_health += treatment, _minHealth, _maxHealth);
-        _healthChange.Invoke(_health);
+        _healthChange?.Invoke(_health);
     }
 }

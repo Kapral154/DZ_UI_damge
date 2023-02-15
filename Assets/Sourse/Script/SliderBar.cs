@@ -6,9 +6,20 @@ using UnityEngine.UI;
 public class SliderBar : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
+    [SerializeField] private EnemyHealth _enemyHealth;
 
     private Coroutine _coroutine;
     private float _rateChange = 20;
+
+    private void Start()
+    {
+        _enemyHealth._healthChange += SetHitpoints;       
+    }
+
+    private void OnDestroy()
+    {
+        _enemyHealth._healthChange -= SetHitpoints;
+    }
 
     public void SetHitpoints(float value)
     {

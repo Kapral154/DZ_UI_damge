@@ -789,6 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1235019135}
+  _enemyHealth: {fileID: 1764795271}
 --- !u!1 &1235653401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,21 +1198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832cba7423486304199c119ca19fb0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1235019136}
-        m_TargetAssemblyTypeName: SliderBar, Assembly-CSharp
-        m_MethodName: SetHitpoints
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &1764795272
 Animator:
   serializedVersion: 4
